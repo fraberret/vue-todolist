@@ -26,19 +26,19 @@ createApp({
         addTask() {
             console.log('ciao');
 
-            if (this.newTask.length>1) {
-                this.toDoList.unshift({text: this.newTask , done: false})
-            }else{
+            if (this.newTask.length > 1) {
+                this.toDoList.unshift({ text: this.newTask, done: false })
+            } else {
                 alert('Inserisci la tua task')
             }
-            
+
         },
-        completed(index){
+        completed(index) {
             console.log(this.toDoList[index].done);
-            if (this.toDoList[index].done===true) {
-                this.toDoList[index].done=false
-            }else{
-                this.toDoList[index].done=true
+            if (this.toDoList[index].done === true) {
+                this.toDoList[index].done = false
+            } else {
+                this.toDoList[index].done = true
             }
         }
     }

@@ -10,21 +10,23 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<body>
-    <div id="app">
+<body class="bg-dark">
+    <div id="app" class="container bg-light rounded text-center mt-5 p-4 ">
         <h1>Todo List</h1>
-        <input type="text" v-model="newTask" placeholder="Aggiungi la tua task" @keyup.enter="addTask()">
-        <button @click="addTask()">Aggiungi</button>
-        <div class="w-25">
-            <ul class="list-group">
-                <li class="list-group-item" v-for="(todo , index) in toDoList" @click="completed(index)">
-                    <div>
+        <p class="alert alert-primary my-3">Oggi devi svolgere: {{toDoList.length}} task</p>
+        
+        <input type="text" class="form-control my-4" v-model="newTask" placeholder="Aggiungi la tua task" @keyup.enter="addTask()">
+        <button class="btn btn-outline-primary" @click="addTask()">Aggiungi</button>
+        <div class="w">
+            <ul class="list-group p-4">
+                <li class="list-group-item  d-flex justify-content-between" v-for="(todo , index) in toDoList" @click="completed(index)">
+                    
 
-                        <s v-if="todo.done==true">{{todo.text}}</s>
-                        <span v-else>{{todo.text}}</span>
+                        <s class="align-self-center" v-if="todo.done==true">{{todo.text}}</s>
+                        <span class="align-self-center" v-else>{{todo.text}}</span>
 
-                        <i href="" @click="remove(index)"> &cross;</i>
-                    </div>
+                        <button class="btn btn-outline-danger" href="" @click="remove(index)"> &cross;</button>
+                    
                 </li>
 
             </ul>
