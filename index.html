@@ -13,7 +13,7 @@
     <div id="app">
         <h1>Todo List</h1>
         <input type="text" v-model="newTask" placeholder="Aggiungi la tua task" @keyup.enter="addTask()">
-        <button>Aggiungi</button>
+        <button @click="addTask()">Aggiungi</button>
         <div class="w-25">
         <ul class="list-group">
             <li class="list-group-item" v-for="(todo , index) in toDoList">
