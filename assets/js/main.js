@@ -32,6 +32,14 @@ createApp({
                 alert('Inserisci la tua task')
             }
             
+        },
+        completed(index){
+            console.log(this.toDoList[index].done);
+            if (this.toDoList[index].done===true) {
+                this.toDoList[index].done=false
+            }else{
+                this.toDoList[index].done=true
+            }
         }
     }
 }).mount('#app')
