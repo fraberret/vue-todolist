@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
     <div id="app">
-        <ul v-for="(todo , index) in toDoList">
-            <li v-if="todo.done==true"><s>{{todo.text}}</s>
-            <i href="" @click="remove(index)"> &cross;</i>
+        <ul>
+            <li v-for="(todo , index) in toDoList">
+                <div>
+                    <s v-if="todo.done==true">{{todo.text}}</s>
+                    <span v-else>{{todo.text}}</span>
+                    <i href="" @click="remove(index)"> &cross;</i>
+                </div>
             </li>
-            <li v-else>{{todo.text}}
-                <i href="" @click="remove(index)" > &cross;</i>
-            </li>
+
         </ul>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
+
 </html>
