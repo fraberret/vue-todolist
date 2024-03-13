@@ -9,7 +9,8 @@
 <body>
     <div id="app">
         <ul v-for="todo in toDoList">
-            <li>{{todo.text}}</li>
+            <li v-if="todo.done==true"><s>{{todo.text}}</s></li>
+            <li v-else>{{todo.text}}</li>
         </ul>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
