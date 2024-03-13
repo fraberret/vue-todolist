@@ -25,7 +25,13 @@ createApp({
         },
         addTask() {
             console.log('ciao');
-            this.toDoList.unshift({text: this.newTask , done: false})
+
+            if (this.newTask.length>1) {
+                this.toDoList.unshift({text: this.newTask , done: false})
+            }else{
+                alert('Inserisci la tua task')
+            }
+            
         }
     }
 }).mount('#app')
