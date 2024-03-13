@@ -8,7 +8,9 @@
 </head>
 <body>
     <div id="app">
-        {{ message }}
+        <ul v-for="todo in toDoList">
+            <li>{{todo.text}}</li>
+        </ul>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/js/main.js"></script>
