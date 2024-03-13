@@ -16,5 +16,10 @@ createApp({
         { text: "Fare una passeggiata", done: true }
     ]
     }
+  },
+  methods:{
+    remove(index){
+        console.log(index);
+    }
   }
 }).mount('#app')

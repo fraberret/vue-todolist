@@ -8,12 +8,12 @@
 </head>
 <body>
     <div id="app">
-        <ul v-for="todo in toDoList">
+        <ul v-for="(todo , index) in toDoList">
             <li v-if="todo.done==true"><s>{{todo.text}}</s>
-            <i href=""> &cross;</i>
+            <i href="" @click="remove(index)"> &cross;</i>
             </li>
             <li v-else>{{todo.text}}
-                <i href=""> &cross;</i>
+                <i href="" @click="remove(index)" > &cross;</i>
             </li>
         </ul>
     </div>
