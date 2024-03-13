@@ -12,8 +12,8 @@
 <body>
     <div id="app">
         <h1>Todo List</h1>
-        <input type="text" name="" id="">
-        <button>Aggiungi</button>
+        <input type="text" v-model="newTask" @keyup.enter="addTask()">
+        
         <div class="w-25">
         <ul class="list-group">
             <li class="list-group-item" v-for="(todo , index) in toDoList">

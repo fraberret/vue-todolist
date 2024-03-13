@@ -8,19 +8,24 @@ Stampare all'interno di una lista HTML un item per ogni todo. Se la proprietà d
 const { createApp } = Vue
 
 createApp({
-  data() {
-    return {
-      toDoList: [
-        { text: "Fare la spesa", done: false },
-        { text: "Studiare per l'esame", done: false },
-        { text: "Fare una passeggiata", done: true }
-    ]
+    data() {
+        return {
+            newTask: '',
+            toDoList: [
+                { text: "Fare la spesa", done: false },
+                { text: "Studiare per l'esame", done: false },
+                { text: "Fare una passeggiata", done: true }
+            ]
+        }
+    },
+    methods: {
+        remove(index) {
+            console.log(index);
+            this.toDoList.splice(index, 1)
+        },
+        addTask() {
+            console.log('ciao');
+            this.toDoList.unshift({text: this.newTask , done: false})
+        }
     }
-  },
-  methods:{
-    remove(index){
-        console.log(index);
-        this.toDoList.splice(index,1)
-    }
-  }
 }).mount('#app')
