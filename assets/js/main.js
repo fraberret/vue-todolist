@@ -28,6 +28,7 @@ createApp({
 
             if (this.newTask.length > 1) {
                 this.toDoList.unshift({ text: this.newTask, done: false })
+                this.newTask=''
             } else {
                 alert('Inserisci la tua task')
             }
