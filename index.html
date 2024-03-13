@@ -11,23 +11,54 @@
 </head>
 
 <body class="bg-dark">
+    
     <div id="app" class="container bg-light rounded text-center mt-5 p-4 ">
+        
+        <!-- title -->
         <h1>Todo List</h1>
+
+        <!-- task todo -->
         <p class="alert alert-primary  my-4">Oggi devi svolgere: {{toDoList.length}} task</p>
+        
+        <!-- add new task title -->
         <h5>Aggiungi una nuova task</h5>
+        
+        <!-- input -->
         <input type="text" class="form-control mb-4" v-model="newTask" placeholder="Aggiungi la tua task" @keyup.enter="addTask()">
+        
+        <!-- button -->
         <button class="btn btn-outline-primary" @click="addTask()">Aggiungi</button>
-        <div class="w">
+        
+        <div>
             <ul class="list-group p-4">
-                <li class="list-group-item  d-flex justify-content-between" v-for="(todo , index) in toDoList" @click="completed(index)">
-                    
+                
+                <!-- list item -->
+                <li class="list-group-item  d-flex justify-content-between" v-for="(todo , index) in toDoList"
+                    @click="completed(index)">
 
-                        <div class="align-self-center" v-if="todo.done==true"><s>{{todo.text}}</s><span class="alert alert-success p-2 ms-2">Fatto!</span></div>
-                        <div class="align-self-center" v-else><span>{{todo.text}}</span>
-                        <span class="alert alert-warning p-2 ms-2">Da fare</span></div>
+                    <!-- done -->
+                    <div class="align-self-center" v-if="todo.done==true">
+                        
+                        <!-- text -->
+                        <s>{{todo.text}}</s>
+                        
+                        <!-- done tag -->
+                        <span class="alert alert-success p-2 ms-2">Fatto!</span>
+                    </div>
 
-                        <button class="btn btn-outline-danger" href="" @click="remove(index)"> &cross;</button>
-                    
+                    <!-- todo -->
+                    <div class="align-self-center" v-else>
+                        
+                        <!-- text -->
+                        <span>{{todo.text}}</span>
+                        
+                        <!-- todo tag -->
+                        <span class="alert alert-warning p-2 ms-2">Da fare</span>
+                    </div>
+
+                    <!-- red cross -->
+                    <button class="btn btn-outline-danger" href="" @click="remove(index)"> &cross;</button>
+
                 </li>
 
             </ul>
